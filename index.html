@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrs. Fig's Figgery - Premium Plants & Garden Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2d3a2d;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d5a3d 0%, #4a7c59 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2d5a3d;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: #2d5a3d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(45,90,61,0.1) 0%, rgba(74,124,89,0.1) 100%);
+            border: 2px solid rgba(45,90,61,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #2d5a3d;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #4a7c59;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plant-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(45,90,61,0.1);
+        }
+
+        .plant-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .plant-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #4a7c59, #6b9b7a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plant-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q60,30 50,50 Q40,30 50,10" fill="rgba(255,255,255,0.1)"/><path d="M30,20 Q40,40 30,60 Q20,40 30,20" fill="rgba(255,255,255,0.05)"/><path d="M70,25 Q80,45 70,65 Q60,45 70,25" fill="rgba(255,255,255,0.05)"/></svg>');
+            animation: sway 6s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        .plant-info {
+            padding: 1.5rem;
+        }
+
+        .plant-info h3 {
+            color: #2d5a3d;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .plant-info p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #2d5a3d;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #4a7c59, #6b9b7a);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(45,90,61,0.05) 0%, rgba(74,124,89,0.05) 100%);
+            border-radius: 15px;
+            border: 2px solid rgba(45,90,61,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: #4a7c59;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4a7c59;
+        }
+
+        .contact-item h3 {
+            color: #2d5a3d;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5a3d;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🌿 Mrs. Fig's Figgery</div>
+                <div class="tagline">Where Plants Find Their Perfect Home</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Our Plants</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>Welcome to Mrs. Fig's Figgery</h1>
+            <p>Discover our carefully curated collection of healthy, vibrant plants. From elegant figs to exotic houseplants, we provide the perfect green companions for your home and garden.</p>
+        </section>
+
+        <section id="gallery">
+            <h2 style="text-align: center; color: #2d5a3d; margin-bottom: 2rem; font-size: 2.5rem;">Our Beautiful Plants</h2>
+            <div class="gallery">
+                <div class="plant-card">
+                    <div class="plant-image">🌱</div>
+                    <div class="plant-info">
+                        <h3>Fiddle Leaf Fig</h3>
+                        <p>Our signature plant! These stunning trees make a bold statement in any room with their large, glossy leaves and elegant structure.</p>
+                    </div>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-image">🍃</div>
+                    <div class="plant-info">
+                        <h3>Rubber Plant</h3>
+                        <p>Low-maintenance and beautiful, perfect for beginners. Known for their thick, waxy leaves and air-purifying qualities.</p>
+                    </div>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-image">🌿</div>
+                    <div class="plant-info">
+                        <h3>Snake Plant</h3>
+                        <p>Virtually indestructible and perfect for low-light areas. These architectural plants add modern style to any space.</p>
+                    </div>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-image">🌵</div>
+                    <div class="plant-info">
+                        <h3>Monstera Deliciosa</h3>
+                        <p>The Instagram-famous split-leaf beauty that brings tropical vibes to your home. Fast-growing and absolutely stunning.</p>
+                    </div>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-image">🪴</div>
+                    <div class="plant-info">
+                        <h3>Pothos Collection</h3>
+                        <p>Trailing vines perfect for hanging baskets or shelves. Available in golden, marble queen, and neon varieties.</p>
+                    </div>
+                </div>
+                <div class="plant-card">
+                    <div class="plant-image">🌳</div>
+                    <div class="plant-info">
+                        <h3>Weeping Fig</h3>
+                        <p>Elegant indoor trees with graceful branches and small, dense leaves. Perfect for creating a natural focal point.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Mrs. Fig's Figgery</h2>
+                    <p>Welcome to Mrs. Fig's Figgery, where passion for plants meets expert care. Founded with love for all things green, we specialize in providing healthy, thriving plants that bring life and beauty to your space.</p>
+                    <p>Our carefully selected collection includes everything from low-maintenance succulents to statement-making fiddle leaf figs. Each plant is nurtured with care and comes with detailed care instructions to ensure your success.</p>
+                    <p>Whether you're a seasoned plant parent or just beginning your green journey, we're here to help you find the perfect plant companion and provide ongoing support for your growing collection.</p>
+                </div>
+                <div class="about-image">
+                    🏡
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 style="text-align: center; color: #2d5a3d; margin-bottom: 2rem; font-size: 2.5rem;">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>hello@mrsfigfiggery.com<br>Plant questions welcome!</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Call or Text</h3>
+                    <p>(555) 123-FIGS<br>Mon-Fri 9AM-6PM</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Visit Our Greenhouse</h3>
+                    <p>123 Garden Lane<br>Plant City, FL 33566</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <h3>Follow Us</h3>
+                    <p>@MrsFigsFixgery<br>Daily plant tips & photos</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mrs. Fig's Figgery. Growing happiness, one plant at a time. 🌿</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Animate sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
