@@ -182,6 +182,25 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q60,30 50,50 Q40,30 50,10" fill="rgba(255,255,255,0.1)"/><path d="M30,20 Q40,40 30,60 Q20,40 30,20" fill="rgba(255,255,255,0.05)"/><path d="M70,25 Q80,45 70,65 Q60,45 70,25" fill="rgba(255,255,255,0.05)"/></svg>');
             animation: sway 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .plant-photo {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .plant-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .plant-photo:hover img {
+            transform: scale(1.05);
         }
 
         @keyframes sway {
@@ -227,7 +246,7 @@
         .about-image {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, #4a7c59, #6b9b7a);
+            /* background: linear-gradient(135deg, #4a7c59, #6b9b7a); */
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -369,24 +388,24 @@
                     </div>
                 </div>
                 <div class="plant-card">
-                    <div class="plant-image">🌿</div>
+                    <div class="plant-photo"><img src="images/strawberry-plant.jpg" alt="Strawberry Plant"></div>
                     <div class="plant-info">
-                        <h3>Snake Plant</h3>
-                        <p>Virtually indestructible and perfect for low-light areas. These architectural plants add modern style to any space.</p>
+                        <h3>Strawberry Plant</h3>
+                        <p>This is a strawberry plant. It may sprout runners to grow into a larger plant. It will produce strawberries in the early summer here in Texas.</p>
                     </div>
                 </div>
                 <div class="plant-card">
-                    <div class="plant-image"><img src="images/texas-everbearing.jpg" alt="Texas Everbearing"></div>
+                    <div class="plant-photo"><img src="images/texas-everbearing.jpg" alt="Texas Everbearing"></div>
                     <div class="plant-info">
                         <h3>Texas Everbearing</h3>
-                        <p>The Instagram-famous split-leaf beauty that brings tropical vibes to your home. Fast-growing and absolutely stunning.</p>
+                        <p>This is a Texas Everbearing fig tree. It will grow quite large but is easy to care for and produces multiple batches of fruit.</p>
                     </div>
                 </div>
                 <div class="plant-card">
-                    <div class="plant-image">🪴</div>
+                    <div class="plant-photo"><img src="images/celeste.jpg" alt="Celeste Fig"></div>
                     <div class="plant-info">
-                        <h3>Pothos Collection</h3>
-                        <p>Trailing vines perfect for hanging baskets or shelves. Available in golden, marble queen, and neon varieties.</p>
+                        <h3>Celeste Fig</h3>
+                        <p>This is a Celeste Fig tree. It seems to be a bit less hardy than the Texas Everbearing but is a beautiful tree.</p>
                     </div>
                 </div>
                 <div class="plant-card">
@@ -403,12 +422,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About Mrs. Fig's Figgery</h2>
-                    <p>Welcome to Mrs. Fig's Figgery, where passion for plants meets expert care. Founded with love for all things green, we specialize in providing healthy, thriving plants that bring life and beauty to your space.</p>
-                    <p>Our carefully selected collection includes everything from low-maintenance succulents to statement-making fiddle leaf figs. Each plant is nurtured with care and comes with detailed care instructions to ensure your success.</p>
-                    <p>Whether you're a seasoned plant parent or just beginning your green journey, we're here to help you find the perfect plant companion and provide ongoing support for your growing collection.</p>
+                    <p>Welcome to Mrs. Fig's Figgery, where passion for plants meets expert care. Founded with love for all things green, we specialize in providing healthy, thriving plants that bring life and produce yummy fruits.</p>
+                    <p>Our carefully selected collection includes everything from low-maintenance pineapples to statement-making fiddle leaf figs. Each plant is nurtured with care and has dealt with the wild fluctuations of Texas heat and humidity to ice storms in February.</p>
+                    <p>Whether you're a seasoned plant parent or just beginning your green journey, we're here to show you how to care for your plants and enjoy the fruits of your labor.</p>
                 </div>
                 <div class="about-image">
-                    🏡
+                    <img src="images/sign.jpg" alt="Orchard">
                 </div>
             </div>
         </section>
