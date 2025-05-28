@@ -245,16 +245,27 @@
 
         .about-image {
             width: 100%;
-            height: 300px;
-            /* background: linear-gradient(135deg, #4a7c59, #6b9b7a); */
+            height: 400px;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 4rem;
             position: relative;
             overflow: hidden;
+            background: #f5f7fa;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.3s ease;
+            padding: 1rem;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
         }
 
         /* Contact */
@@ -367,7 +378,7 @@
     <main class="container">
         <section id="home" class="hero">
             <h1>Welcome to Mrs. Fig's Figgery</h1>
-            <p>Discover our carefully curated collection of healthy, vibrant plants. From elegant figs to exotic houseplants, we provide the perfect green companions for your home and garden.</p>
+            <p>Discover our carefully curated collection of healthy, vibrant plants. From elegant figs to spiky pineapples, our variety of green companions give us a reason to smile.</p>
         </section>
 
         <section id="gallery">
@@ -380,11 +391,18 @@
                         <p>Our signature plant! These stunning trees make a bold statement in any room with their large, glossy leaves and elegant structure.</p>
                     </div>
                 </div>
-                <div class="plant-card">
-                    <div class="plant-image">🍃</div>
+                <!-- <div class="plant-card">
+                    <div class="plant-photo"><img src="images/brown-turkey.jpg" alt="Brown Turkey Fig"></div>
                     <div class="plant-info">
-                        <h3>Rubber Plant</h3>
-                        <p>Low-maintenance and beautiful, perfect for beginners. Known for their thick, waxy leaves and air-purifying qualities.</p>
+                        <h3>Brown Turkey Fig</h3>
+                        <p>This is a Brown Turkey Fig tree. It is a bit smaller than the Texas Everbearing but is a beautiful tree. It produces the most fruit of any fig tree we have.</p>
+                    </div>
+                </div> -->
+                <div class="plant-card">
+                    <div class="plant-photo"><img src="images/pineapple.jpg" alt="Pineapple Plant"></div>
+                    <div class="plant-info">
+                        <h3>Pineapple Plant</h3>
+                        <p>This pineapple plant is more bush than tree, and it has proved quite fruitful with at least one fruit a year for the past few years.</p>
                     </div>
                 </div>
                 <div class="plant-card">
@@ -397,7 +415,7 @@
                 <div class="plant-card">
                     <div class="plant-photo"><img src="images/texas-everbearing.jpg" alt="Texas Everbearing"></div>
                     <div class="plant-info">
-                        <h3>Texas Everbearing</h3>
+                        <h3>Texas Everbearing Fig</h3>
                         <p>This is a Texas Everbearing fig tree. It will grow quite large but is easy to care for and produces multiple batches of fruit.</p>
                     </div>
                 </div>
@@ -409,10 +427,10 @@
                     </div>
                 </div>
                 <div class="plant-card">
-                    <div class="plant-image">🌳</div>
+                    <div class="plant-photo"><img src="images/little-fuji-apples.jpg" alt="Fuji Apples"></div>
                     <div class="plant-info">
-                        <h3>Weeping Fig</h3>
-                        <p>Elegant indoor trees with graceful branches and small, dense leaves. Perfect for creating a natural focal point.</p>
+                        <h3>Fuji Apples</h3>
+                        <p>Some of our favorite apples. They will not ripen further and must be pruned to allow the tree to focus on growing.</p>
                     </div>
                 </div>
             </div>
